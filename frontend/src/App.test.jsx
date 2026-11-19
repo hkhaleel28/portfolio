@@ -5,7 +5,9 @@ import App from './App'
 beforeEach(() => {
   vi.stubGlobal(
     'fetch',
-    vi.fn(() => Promise.resolve({ json: () => Promise.resolve({ status: 'ok' }) })),
+    vi.fn(() =>
+      Promise.resolve({ ok: true, json: () => Promise.resolve({ status: 'ok' }) }),
+    ),
   )
 })
 
@@ -26,6 +28,14 @@ test('shows the API status returned by /health', async () => {
   render(<App />)
   expect(await screen.findByText('API: ok')).toBeTruthy()
   expect(fetch).toHaveBeenCalledWith('http://localhost:8000/health')
+})
+
+test('shows unreachable when the API answers with an HTTP error', async () => {
+  fetch.mockImplementationOnce(() =>
+    Promise.resolve({ ok: false, json: () => Promise.resolve({ detail: 'Not Found' }) }),
+  )
+  render(<App />)
+  expect(await screen.findByText('API: unreachable')).toBeTruthy()
 })
 
 test('shows unreachable when the API request fails', async () => {
