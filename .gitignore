@@ -1,0 +1,42 @@
+# --- Personal / private (never commit) ---
+docs/*.pdf
+docs/private/
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# --- Claude Code local state ---
+.claude/settings.local.json
+.playwright-mcp/
+
+# --- Node / frontend ---
+node_modules/
+dist/
+build/
+coverage/
+.vite/
+*.log
+npm-debug.log*
+
+# --- Python / backend ---
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# --- Infra ---
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfvars
+!*.tfvars.example
+
+# --- OS / editor ---
+.DS_Store
+Thumbs.db
+.idea/
