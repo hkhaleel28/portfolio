@@ -17,6 +17,8 @@ One project (this portfolio) grows through every phase. Each phase ends with som
 | 8 | Observability and DevSecOps: Prometheus and Grafana, structured logs, Trivy scans, secret scanning | Dashboards and a security gate in CI |
 | 9 | AI/ML bridge: Python data stack, a small model served via FastAPI in a container, MLflow, intro to MLOps | One ML service deployed through the same pipeline |
 
+**Status:** Phase 1 is done (PRs #1 to #3: React + Vite, FastAPI, tests, frontend calling `/health`). Phase 2 is next.
+
 ## Certification path (to refine)
 
 AZ-900, then AZ-104 or AZ-400, then Terraform Associate, then CKA or CKAD.
@@ -25,4 +27,4 @@ AZ-900, then AZ-104 or AZ-400, then Terraform Associate, then CKA or CKAD.
 
 - Small steps. Each change is explained: what, why, and what the alternatives were.
 - Feature branch, then PR, even when working solo. CI must pass before merging.
-- You type the code you want to learn. Claude reviews and explains.
+- Claude writes small diffs and explains each one. Type any part yourself whenever you want to learn it by writing; Claude then reviews and explains.
