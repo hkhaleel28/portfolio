@@ -1,5 +1,4 @@
-// Newest layer first, the way a rock column is read.
-// Order of the layers without a year is an assumption: confirm with Hammad.
+// Newest layer first, the way a rock column is read. Order confirmed by Hammad.
 export const layers = [
   {
     title: 'DevOps',

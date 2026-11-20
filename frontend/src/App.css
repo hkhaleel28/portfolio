@@ -195,7 +195,7 @@ h2 {
   font-family: var(--heading);
   font-size: 0.95rem;
   font-weight: 500;
-  color: var(--muted);
+  color: var(--ink);
 }
 
 .current .when {

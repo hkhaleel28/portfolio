@@ -62,7 +62,7 @@ function App() {
           <div className="wrap">
             <h2>Background</h2>
             <p className="note">Newest layer on top, the way a rock column is read.</p>
-            <ol className="column">
+            <ol className="column" aria-label="Background, newest first">
               {layers.map((layer, i) => (
                 <li
                   key={layer.title}

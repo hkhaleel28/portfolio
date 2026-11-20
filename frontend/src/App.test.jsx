@@ -1,5 +1,5 @@
 import { afterEach, beforeEach, expect, test, vi } from 'vitest'
-import { cleanup, render, screen } from '@testing-library/react'
+import { cleanup, render, screen, within } from '@testing-library/react'
 import App from './App'
 
 beforeEach(() => {
@@ -31,10 +31,9 @@ test('lists the Azure certifications with their certificate numbers', async () =
 
 test('lists the background with the newest layer first', async () => {
   render(<App />)
-  const titles = screen
+  const titles = within(screen.getByRole('list', { name: 'Background, newest first' }))
     .getAllByRole('listitem')
-    .map((li) => li.querySelector('h3')?.textContent)
-    .filter(Boolean)
+    .map((li) => li.querySelector('h3').textContent)
   expect(titles[0]).toBe('DevOps')
   expect(titles.at(-1)).toBe('BS Computer Science')
   await screen.findByText('API: ok')
