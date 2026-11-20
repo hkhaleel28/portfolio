@@ -17,11 +17,11 @@ One project (this portfolio) grows through every phase. Each phase ends with som
 | 8 | Observability and DevSecOps: Prometheus and Grafana, structured logs, Trivy scans, secret scanning | Dashboards and a security gate in CI |
 | 9 | AI/ML bridge: Python data stack, a small model served via FastAPI in a container, MLflow, intro to MLOps | One ML service deployed through the same pipeline |
 
-**Status:** Phase 1 is done: React + Vite and FastAPI both run with tests, the page shows the real portfolio content, and it calls `/health`. Next is Phase 2. The Resume section is a placeholder until the resume is updated (planned for Phase 5).
+**Status:** Phase 1 is done: React + Vite and FastAPI both run with tests, the page shows the real portfolio content, and it calls `/health`. Next is Phase 2.
 
 ## Certification path (to refine)
 
-Done: AZ-900, AZ-104. Next: AZ-400, then Terraform Associate, then CKA or CKAD.
+Done: AZ-900, AZ-104 (CCNA and MCSA are also held, but this path tracks the cloud and DevOps certs). Next: AZ-400, then Terraform Associate, then CKA or CKAD.
 
 ## How we work
 
