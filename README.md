@@ -10,7 +10,7 @@ The plan lives in [docs/ROADMAP.md](docs/ROADMAP.md). This README grows as each 
 
 ## Status
 
-Phases 0 and 1 are complete: the React + Vite frontend calls the FastAPI `/health` endpoint, and both sides have tests. Phase 2 (code quality) is next.
+See the current phase in [docs/ROADMAP.md](docs/ROADMAP.md).
 
 ## License
 

@@ -17,7 +17,7 @@ One project (this portfolio) grows through every phase. Each phase ends with som
 | 8 | Observability and DevSecOps: Prometheus and Grafana, structured logs, Trivy scans, secret scanning | Dashboards and a security gate in CI |
 | 9 | AI/ML bridge: Python data stack, a small model served via FastAPI in a container, MLflow, intro to MLOps | One ML service deployed through the same pipeline |
 
-**Status:** Phase 1 is done (PRs #1 to #3: React + Vite, FastAPI, tests, frontend calling `/health`). Phase 2 is next.
+**Status:** Phase 1 foundations are done: React + Vite and FastAPI both run with tests, and the page calls `/health`. Still open in Phase 1: the page is the Vite template, so the real portfolio content is not built yet.
 
 ## Certification path (to refine)
 

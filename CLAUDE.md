@@ -25,13 +25,13 @@ Personal portfolio site and a **learning vehicle** for Hammad, who is re-enterin
 
 Commands:
 - Frontend: `cd frontend; npm install; npm run dev | test | lint | build`
-- Backend: `cd backend; python -m venv .venv; .venv\Scripts\Activate.ps1; pip install -r requirements.txt; uvicorn app.main:app --reload; pytest` (`pytest` only works from `backend/` because `pytest.ini` is relative)
+- Backend: `cd backend; python -m venv .venv; .venv\Scripts\Activate.ps1; pip install -r requirements.txt; uvicorn app.main:app --reload; pytest` (from the repo root use `pytest backend`; a bare `pytest` there fails because it finds no `pytest.ini`)
 - Both together: API on port 8000 and `npm run dev` on port 5173. CORS allows only `http://localhost:5173` (hard-coded for now, an env var in Phase 5), so open that exact URL; `127.0.0.1:5173` or another Vite port is blocked and the page shows `API: unreachable`.
 
 ## Environment
 - Windows 11, **PowerShell 5.1** (no `&&`; chain with `;` and check `$?`). Repo is at `C:\dev\portfolio`, deliberately **outside OneDrive** (syncing `.git` and `node_modules` corrupts things). Do not move it back.
 - Node LTS, Python 3.12, Git, GitHub CLI (`gh`) installed with winget. Docker Desktop arrives in Phase 3.
-- PowerShell 5.1 file gotchas: `>` writes UTF-16 and `Set-Content -Encoding utf8` adds a BOM. For commit messages, PR bodies and `requirements.txt` use `[IO.File]::WriteAllText(path, text, (New-Object Text.UTF8Encoding($false)))` and `git commit -F file`. With `2>&1` on git or npm, PowerShell reports harmless stderr as an error, so trust `$LASTEXITCODE`.
+- PowerShell 5.1 file gotchas: `>` writes UTF-16 and `Set-Content -Encoding utf8` adds a BOM. For commit messages, PR bodies and `requirements.txt` use `[IO.File]::WriteAllText(path, text, (New-Object Text.UTF8Encoding($false)))` and `git commit -F file`, always with an absolute path (.NET ignores PowerShell's current folder). With `2>&1` on git or npm, PowerShell reports harmless stderr as an error, so trust `$LASTEXITCODE`.
 
 ## Git and GitHub
 - Default branch `main`. Work on feature branches (`feat/...`, `fix/...`, `chore/...`) and open PRs, even solo.
@@ -49,7 +49,7 @@ Commands:
 ## Installed Claude tooling (user scope)
 - Plugins: `andrej-karpathy-skills`, `document-skills`, `example-skills` (includes `frontend-design`, `skill-creator`, `webapp-testing`), `ui-ux-pro-max`, `taste-skill`, `ponytail`, `claude-mem`, `claude-code-setup`, `claude-md-management`, `code-review`, `security-guidance`, `commit-commands`, `github` (its MCP server is broken, see below).
 - MCP: **Playwright** (project `.mcp.json`) for opening the running app, taking screenshots and checking UI.
-- When to use what: UI work uses `taste-skill`, `ui-ux-pro-max` and `frontend-design`, then verify with Playwright. Commits and PRs use `commit-commands`. After opening each PR, run `code-review` (medium, report-only) without asking and triage the findings, and re-run it after significant updates to the PR; run `security-guidance` before merging. Keep this file current with `claude-md-management`.
+- When to use what: UI work uses `taste-skill`, `ui-ux-pro-max` and `frontend-design`, then verify with Playwright. Commits and PRs use `commit-commands`. After opening each PR, run `code-review` (medium, report-only, never `--comment`) without asking and triage the findings, and re-run it after significant updates to the PR; run `security-guidance` before merging. Keep this file current with `claude-md-management`.
 - The `github` plugin's MCP server fails to connect (bad auth header) and is ignored; use the `gh` CLI.
 - `claude-mem` stores session memory locally in `~/.claude-mem` (telemetry disabled). It is not a substitute for writing decisions down in this file or `docs/`.
 
