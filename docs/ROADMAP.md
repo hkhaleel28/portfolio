@@ -2,7 +2,7 @@
 
 One project (this portfolio) grows through every phase. Each phase ends with something that runs and something you can explain in an interview.
 
-**Starting point:** BSc Computer Science, 2-3 years as a network systems admin, now a geologist (MSc Marine/Ocean Sciences). AZ-900 in progress. Goal: DevOps engineer first, AI/ML later.
+**Starting point:** BSc Computer Science, 2-3 years as a network systems admin, now a geologist (MSc Marine/Ocean Sciences). AZ-900 and AZ-104 passed. Goal: DevOps engineer first, AI/ML later.
 
 | Phase | Focus | Outcome |
 |---|---|---|
@@ -11,17 +11,17 @@ One project (this portfolio) grows through every phase. Each phase ends with som
 | 2 | Linux and the shell, plus code quality: ESLint, Prettier, type hints, pre-commit | Clean repo and fast feedback loops |
 | 3 | **Docker:** multi-stage builds, docker-compose, nginx, healthchecks, image size | `docker compose up` runs the whole app |
 | 4 | **CI/CD:** GitHub Actions for lint, test and build, push to GHCR, Dependabot, branch protection | Every PR is tested, and `main` publishes images |
-| 5 | **Azure deployment** (builds on AZ-900): Container Apps or App Service, custom domain, HTTPS. **Update the resume here** | Live portfolio URL |
+| 5 | **Azure deployment** (builds on AZ-104): Container Apps or App Service, custom domain, HTTPS. **Update the resume here** | Live portfolio URL |
 | 6 | **Infrastructure as Code:** Terraform (or Bicep), remote state, deploy via pipeline | Reproducible infrastructure from code |
 | 7 | **Kubernetes:** kind or minikube, Deployments, Services, Ingress, ConfigMaps and Secrets, Helm, then AKS | App running on a cluster |
 | 8 | Observability and DevSecOps: Prometheus and Grafana, structured logs, Trivy scans, secret scanning | Dashboards and a security gate in CI |
 | 9 | AI/ML bridge: Python data stack, a small model served via FastAPI in a container, MLflow, intro to MLOps | One ML service deployed through the same pipeline |
 
-**Status:** Phase 1 foundations are done: React + Vite and FastAPI both run with tests, and the page calls `/health`. Still open in Phase 1: the page is the Vite template, so the real portfolio content is not built yet.
+**Status:** Phase 1 is done: React + Vite and FastAPI both run with tests, the page shows the real portfolio content, and it calls `/health`. Next is Phase 2. The Resume section is a placeholder until the resume is updated (planned for Phase 5).
 
 ## Certification path (to refine)
 
-AZ-900, then AZ-104 or AZ-400, then Terraform Associate, then CKA or CKAD.
+Done: AZ-900, AZ-104. Next: AZ-400, then Terraform Associate, then CKA or CKAD.
 
 ## How we work
 
