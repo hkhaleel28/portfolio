@@ -1,5 +1,5 @@
 import { afterEach, beforeEach, expect, test, vi } from 'vitest'
-import { cleanup, fireEvent, render, screen } from '@testing-library/react'
+import { cleanup, render, screen } from '@testing-library/react'
 import App from './App'
 
 beforeEach(() => {
@@ -16,11 +16,27 @@ afterEach(() => {
   vi.unstubAllGlobals()
 })
 
-test('counter button increments on click', async () => {
+test('shows the name as the main heading', async () => {
   render(<App />)
-  const button = screen.getByRole('button', { name: /count is 0/i })
-  fireEvent.click(button)
-  expect(button.textContent).toBe('Count is 1')
+  expect(screen.getByRole('heading', { level: 1, name: 'Hammad Khaleel' })).toBeTruthy()
+  await screen.findByText('API: ok')
+})
+
+test('lists the Azure certifications with their certificate numbers', async () => {
+  render(<App />)
+  expect(screen.getByText('Certificate number H845-4117')).toBeTruthy()
+  expect(screen.getByText('Certificate number H861-4983')).toBeTruthy()
+  await screen.findByText('API: ok')
+})
+
+test('lists the background with the newest layer first', async () => {
+  render(<App />)
+  const titles = screen
+    .getAllByRole('listitem')
+    .map((li) => li.querySelector('h3')?.textContent)
+    .filter(Boolean)
+  expect(titles[0]).toBe('DevOps')
+  expect(titles.at(-1)).toBe('BS Computer Science')
   await screen.findByText('API: ok')
 })
 
