@@ -25,7 +25,7 @@ Personal portfolio site and a **learning vehicle** for Hammad, who is re-enterin
 
 Commands:
 - Frontend: `cd frontend; npm install; npm run dev | test | lint | format | format:check | build` (oxlint lints, Prettier formats; `format:check` is the read-only version CI will run)
-- Backend: `cd backend; python -m venv .venv; .venv\Scripts\Activate.ps1; pip install -r requirements.txt; uvicorn app.main:app --reload; pytest` (from the repo root use `pytest backend`; a bare `pytest` there fails because it finds no `pytest.ini`)
+- Backend: `cd backend; python -m venv .venv; .venv\Scripts\Activate.ps1; pip install -r requirements.txt; uvicorn app.main:app --reload; pytest; ruff check .; ruff format .` (ruff lints and formats, rules in `backend/ruff.toml`, and its `ANN` rules require type hints; `ruff format --check .` is the read-only version CI will run; from the repo root use `pytest backend` and `ruff check backend`; a bare `pytest` at the root fails because it finds no `pytest.ini`)
 - Both together: API on port 8000 and `npm run dev` on port 5173. CORS allows only `http://localhost:5173` (hard-coded for now, an env var in Phase 5), so open that exact URL; `127.0.0.1:5173` or another Vite port is blocked and the page shows `API: unreachable`.
 
 ## Environment
