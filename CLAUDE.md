@@ -24,7 +24,7 @@ Personal portfolio site and a **learning vehicle** for Hammad, who is re-enterin
 - `docs/`: roadmap and notes. PDFs in `docs/` are gitignored (the resume lives there and is private).
 
 Commands:
-- Frontend: `cd frontend; npm install; npm run dev | test | lint | build`
+- Frontend: `cd frontend; npm install; npm run dev | test | lint | format | format:check | build` (oxlint lints, Prettier formats; `format:check` is the read-only version CI will run)
 - Backend: `cd backend; python -m venv .venv; .venv\Scripts\Activate.ps1; pip install -r requirements.txt; uvicorn app.main:app --reload; pytest` (from the repo root use `pytest backend`; a bare `pytest` there fails because it finds no `pytest.ini`)
 - Both together: API on port 8000 and `npm run dev` on port 5173. CORS allows only `http://localhost:5173` (hard-coded for now, an env var in Phase 5), so open that exact URL; `127.0.0.1:5173` or another Vite port is blocked and the page shows `API: unreachable`.
 
