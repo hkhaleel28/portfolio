@@ -46,11 +46,10 @@ function App() {
               Network administrator turned geologist, building toward DevOps.
             </p>
             <p className="intro">
-              I spent more than three years in IT operations, running Windows
-              servers, Cisco networks and Azure environments. I now work as a
-              geologist, and I am learning DevOps by building and deploying this
-              site one step at a time. Based in St. John&rsquo;s, Newfoundland
-              and Labrador.
+              I spent more than three years in IT operations, running Windows servers,
+              Cisco networks and Azure environments. I now work as a geologist, and I am
+              learning DevOps by building and deploying this site one step at a time.
+              Based in St. John&rsquo;s, Newfoundland and Labrador.
             </p>
             <a className="button" href="#projects">
               See the project
@@ -113,10 +112,9 @@ function App() {
             <article className="project">
               <h3>This portfolio</h3>
               <p>
-                A React and Vite frontend, a FastAPI backend, and tests on both
-                sides. The status in the footer is a live call to the API. It is
-                built in phases, and Docker, GitHub Actions, Azure, Terraform and
-                Kubernetes come next.
+                A React and Vite frontend, a FastAPI backend, and tests on both sides. The
+                status in the footer is a live call to the API. It is built in phases, and
+                Docker, GitHub Actions, Azure, Terraform and Kubernetes come next.
               </p>
               <a className="link" href="https://github.com/hkhaleel28/portfolio">
                 View the code on GitHub
