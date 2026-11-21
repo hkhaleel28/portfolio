@@ -1,0 +1,6 @@
+line-length = 100
+
+[lint]
+# E/F: pycodestyle and pyflakes (style errors, unused imports and names)
+# I: import order, B: likely bugs, UP: outdated syntax, ANN: missing type hints
+select = ["E", "F", "I", "B", "UP", "ANN"]
