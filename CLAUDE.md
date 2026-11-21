@@ -24,8 +24,8 @@ Personal portfolio site and a **learning vehicle** for Hammad, who is re-enterin
 - `docs/`: roadmap and notes. PDFs in `docs/` are gitignored (the resume lives there and is private).
 
 Commands:
-- Frontend: `cd frontend; npm install; npm run dev | test | lint | format | format:check | build` (oxlint lints, Prettier formats; `format:check` is the read-only version CI will run)
-- Backend: `cd backend; python -m venv .venv; .venv\Scripts\Activate.ps1; pip install -r requirements.txt; uvicorn app.main:app --reload; pytest; ruff check .; ruff format .` (ruff lints and formats, rules in `backend/ruff.toml`, and its `ANN` rules require type hints; `ruff format --check .` is the read-only version CI will run; from the repo root use `pytest backend` and `ruff check backend`; a bare `pytest` at the root fails because it finds no `pytest.ini`)
+- Frontend: `cd frontend; npm install; npm run dev | test | lint | format | format:check | build` (oxlint lints, Prettier formats; `format` rewrites files, `format:check` only reads, and CI will run it in Phase 4)
+- Backend: `cd backend; python -m venv .venv; .venv\Scripts\Activate.ps1; pip install -r requirements.txt; uvicorn app.main:app --reload; pytest; ruff check .; ruff format .` (`ruff check .` and `ruff format --check .` only read; `ruff format .` rewrites files. Rules are in `backend/ruff.toml` and its `ANN` rules require type hints. CI will run the read-only versions in Phase 4; from the repo root use `pytest backend` and `ruff check backend`; a bare `pytest` at the root fails because it finds no `pytest.ini`)
 - Both together: API on port 8000 and `npm run dev` on port 5173. CORS allows only `http://localhost:5173` (hard-coded for now, an env var in Phase 5), so open that exact URL; `127.0.0.1:5173` or another Vite port is blocked and the page shows `API: unreachable`.
 
 ## Environment
